@@ -6,12 +6,30 @@
   </div>
 </template>
 
+<script>
+import router from '../router'
+
+export default {
+  name: 'Green',
+  mounted () {
+    setTimeout(()=>{
+      console.log('переход на желтый с зеленого')
+    router.push({ path: 'yellow' })
+    }, 15000)
+  },
+  components: {
+
+  }
+}
+</script>
+
 <style>
 .stoplight {
   background-color:grey;
   width:200px;
   height: 600px;
   margin: 0 auto;
+  border-radius: 8px;
 }
 
 .stoplight_red {

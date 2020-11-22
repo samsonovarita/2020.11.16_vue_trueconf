@@ -7,11 +7,17 @@
 </template>
 
 <script>
-// @ is an alias to /src
 
+import router from '../router'
 
 export default {
   name: 'Red',
+  mounted () {
+    setTimeout(()=>{
+      console.log('переход на желтый с красного')
+    router.push({ path: 'yellow' })
+    }, 10000)
+  },
   components: {
 
   }
@@ -25,6 +31,7 @@ export default {
   width:200px;
   height: 600px;
   margin: 0 auto;
+  border-radius: 8px;
 }
 
 .stoplight_red {
@@ -46,7 +53,7 @@ export default {
 }
 
 .stoplight__dim {
-  opacity: 0.8;
+  opacity: 0.5;
 }
 
 
